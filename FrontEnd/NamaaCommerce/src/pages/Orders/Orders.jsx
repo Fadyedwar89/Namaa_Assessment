@@ -236,7 +236,6 @@ export default function Orders() {
             </button>
 
             <ul className="dropdown-menu dropdown-menu-end">
-              
               <li>
                 <button
                   className="dropdown-item"
@@ -315,7 +314,7 @@ export default function Orders() {
         <div className="col-lg col-md-6">
           <div className="stat-card pending">
             <div className="stat-icon stat-icon">
-              <i className="fa-solid fa-clock stat-icon text-primary"></i>
+              <i className="fa-solid fa-clock stat-icon text-warning"></i>
             </div>
 
             <h2>{orders.filter((o) => o.status === "Pending").length}</h2>
@@ -327,7 +326,7 @@ export default function Orders() {
         <div className="col-lg col-md-6">
           <div className="stat-card processing">
             <div className="stat-icon">
-              <i className="fa-solid fa-spinner stat-icon text-warning"></i>
+              <i className="fa-solid fa-spinner stat-icon text-primary"></i>
             </div>
 
             <h2>{orders.filter((o) => o.status === "Processing").length}</h2>

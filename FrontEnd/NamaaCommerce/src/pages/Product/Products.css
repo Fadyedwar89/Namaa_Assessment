@@ -558,18 +558,17 @@
 
 /* Fix dropdown visibility */
 .user-menu {
-  position: relative;
-  z-index: 9999 !important;
+  position: relative
 }
 
 .user-menu .dropdown {
   position: relative;
-  z-index: 9999 !important;
+ 
 }
 
 /* The dropdown menu itself */
 .user-menu .dropdown-menu {
-  z-index: 99999 !important;
+ 
   position: absolute !important;
   top: 100% !important;
   right: 0 !important;
@@ -585,7 +584,7 @@
 .header-actions {
   overflow: visible !important;
   position: relative;
-  z-index: 9999 !important;
+ 
 }
 
 /* Ensure body doesn't clip */
@@ -602,7 +601,7 @@ body {
 
 /* Make sure dropdown is above everything */
 .dropdown-menu.show {
-  z-index: 999999 !important;
+
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
@@ -636,7 +635,7 @@ body {
   background: white;
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-  z-index: 999999 !important;
+ 
   overflow: hidden;
   display: flex;
   flex-direction: column;
