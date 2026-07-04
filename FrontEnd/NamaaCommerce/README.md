@@ -1,16 +1,220 @@
-# React + Vite
+# 💻 NamaaCommerce Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-19-61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF)
+![Redux](https://img.shields.io/badge/State-Redux-764ABC)
+![Bootstrap](https://img.shields.io/badge/UI-Bootstrap-7952B3)
+![Axios](https://img.shields.io/badge/API-Axios-5A29E4)
+![SignalR](https://img.shields.io/badge/Realtime-SignalR-orange)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+</p>
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# 📖 Overview
 
-## Expanding the ESLint configuration
+NamaaCommerce Frontend is a modern React application built with **React + Vite**.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+It provides a clean and responsive user interface for both customers and administrators, communicating with the ASP.NET Core Web API through REST APIs and SignalR.
+
+---
+
+# 🚀 Technologies
+
+- React
+- Vite
+- React Router
+- Redux
+- Axios
+- Bootstrap
+- React Bootstrap
+- Font Awesome
+- SignalR Client
+
+---
+
+# ✨ Features
+
+## Customer
+
+- User Registration
+- User Login
+- Browse Products
+- Product Details
+- Shopping Cart
+- Place Orders
+- View Orders
+- Order Details
+- Real-Time Notifications
+
+---
+
+## Admin Dashboard
+
+- Products CRUD
+- Orders Management
+- Notifications
+
+---
+
+## UI Features
+
+- Responsive Design
+- Search
+- Filtering
+- Sorting
+- Pagination
+- Toast Notifications
+- Loading Indicators
+
+---
+
+# 📁 Project Structure
+
+```
+src
+│
+├── assets
+├── components
+├── pages
+├── services
+├── redux
+├── routes
+├── hooks
+├── layouts
+└── utils
+```
+
+---
+
+# 🔐 Authentication
+
+The application authenticates users using **JWT**.
+
+Supported Roles:
+
+- Admin
+- Customer
+
+Protected routes ensure users can only access pages permitted by their roles.
+
+---
+
+# 🔔 Real-Time Notifications
+
+SignalR Client is integrated to receive notifications instantly from the backend without refreshing the page.
+
+---
+
+# 🌐 API Communication
+
+Axios is used for communication with the ASP.NET Core Web API.
+
+Features include:
+
+- Authentication
+- Products
+- Orders
+- Notifications
+
+---
+
+# 🎨 UI
+
+The application uses:
+
+- Bootstrap
+- React Bootstrap
+- Font Awesome
+
+to provide a responsive and modern user experience.
+
+---
+
+# 🚀 Getting Started
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## Start Development Server
+
+```bash
+npm run dev
+```
+
+---
+
+The application will be available at:
+
+```
+http://localhost:5173
+```
+
+---
+
+# 🔗 Backend
+
+Before running the frontend, make sure the backend API is running.
+
+Example:
+
+```
+http://localhost:5050
+```
+
+Update the API base URL if necessary.
+
+---
+
+# 📸 Screenshots
+
+You can add screenshots here.
+
+Example:
+
+```
+Home
+
+Products
+
+Product Details
+
+Cart
+
+Orders
+
+Dashboard
+
+Notifications
+```
+
+---
+
+# 📈 Future Improvements
+
+- Wishlist
+- Product Reviews
+- User Profile
+- Dark Mode
+- Multi-language Support
+- Payment Gateway Integration
+- Performance Optimization
+
+---
+
+# 👨‍💻 Author
+
+**Fady**
+
+Technical Assessment Project
+
+---
+
+⭐ If you like this project, consider giving it a star on GitHub.
