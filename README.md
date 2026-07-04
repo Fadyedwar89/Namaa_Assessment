@@ -208,6 +208,12 @@ Orders
 <img width="1226" height="505" alt="image" src="https://github.com/user-attachments/assets/aa1b74ad-ffe4-4c3e-942d-e7b37281ad92" />
 <img width="1268" height="528" alt="image" src="https://github.com/user-attachments/assets/b2a4f74d-1555-4a01-b441-413f8cd8ff4c" />
 ```
+Orders Details
+```
+<img width="985" height="606" alt="image" src="https://github.com/user-attachments/assets/ed2b3115-a256-42c1-9428-a7acc499acca" />
+<img width="963" height="603" alt="image" src="https://github.com/user-attachments/assets/197226cd-91fc-479d-8d2c-7268fc4a9993" />
+
+```
 Notifications
 ```
 <img width="1237" height="411" alt="image" src="https://github.com/user-attachments/assets/2ec31d27-5a15-47eb-bd83-121f07985809" />
