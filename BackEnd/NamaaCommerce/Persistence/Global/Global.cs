@@ -1,0 +1,9 @@
+﻿global using Domain.Entities.NotificationModule;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using Domain.Entities.OrderModule;
+global using Domain.Entities.ProductModule;
+global using System.Reflection.Metadata;
+global using Domain.Contracts;
+global using Domain.Entities;
+global using Persistence.Data;

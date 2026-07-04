@@ -1,0 +1,854 @@
+/* ============================================
+   PRODUCTS PAGE - EPIC DESIGN v2
+   Compatible with your updated Products.jsx
+   ============================================ */
+
+/* ============================================
+   DASHBOARD HEADER
+   ============================================ */
+.dashboard-header {
+  background: linear-gradient(135deg,  #764ba2 0%, #764ba2 50%, #1d4ed8 100%);
+  border-radius: 24px;
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.35), 0 0 0 1px rgba(255,255,255,0.1) inset;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 28px;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1320px;
+}
+
+/* Animated background shapes */
+.dashboard-header::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: floatShape 8s ease-in-out infinite;
+}
+
+.dashboard-header::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 10%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: floatShape 10s ease-in-out infinite reverse;
+}
+
+@keyframes floatShape {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -15px) scale(1.05); }
+  66% { transform: translate(-10px, 10px) scale(0.95); }
+}
+
+/* Title */
+.dashboard-header h2 {
+  color: white;
+  font-size: 1.9rem;
+  font-weight: 800;
+  margin: 0 0 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dashboard-header h2 i {
+  font-size: 1.6rem;
+  background: rgba(255, 255, 255, 0.2);
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.dashboard-header:hover h2 i {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+/* Subtitle */
+.dashboard-header .text-muted {
+  color: rgba(255, 255, 255, 0.75) !important;
+  font-size: 0.95rem;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  font-weight: 400;
+}
+
+/* ============================================
+   HEADER ACTIONS (Right side buttons)
+   ============================================ */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   ICON BUTTONS (Notification + Cart)
+   ============================================ */
+.header-icon-btn {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: visible;
+}
+
+.header-icon-btn:hover {
+  background: rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.header-icon-btn:active {
+  transform: translateY(-1px) scale(1.05);
+}
+
+.header-icon-btn i {
+  transition: transform 0.3s ease;
+}
+
+.header-icon-btn:hover i {
+  transform: rotate(-10deg);
+}
+
+/* Notification button specific */
+.notification-btn:hover {
+  background: rgba(245, 158, 11, 0.3);
+  border-color: rgba(245, 158, 11, 0.5);
+}
+
+/* Cart button specific */
+.cart-btn:hover {
+  background: rgba(16, 185, 129, 0.3);
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+/* Notification/Cart Count Badge */
+.notification-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 800;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  border: 2px solid #3b82f6;
+  box-shadow: 0 3px 10px rgba(239, 68, 68, 0.4);
+  animation: badgePulse 2s infinite;
+  z-index: 10;
+}
+
+@keyframes badgePulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 3px 10px rgba(239, 68, 68, 0.4); }
+  50% { transform: scale(1.2); box-shadow: 0 5px 15px rgba(239, 68, 68, 0.6); }
+}
+
+/* ============================================
+   ADD PRODUCT BUTTON (Admin)
+   ============================================ */
+.dashboard-header .btn-success,
+.header-actions .btn-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border: none !important;
+  border-radius: 14px !important;
+  padding: 12px 22px !important;
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-header .btn-success::before,
+.header-actions .btn-success::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.dashboard-header .btn-success:hover::before,
+.header-actions .btn-success:hover::before {
+  left: 100%;
+}
+
+.dashboard-header .btn-success:hover,
+.header-actions .btn-success:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+}
+
+.dashboard-header .btn-success:active,
+.header-actions .btn-success:active {
+  transform: translateY(-1px);
+}
+
+.dashboard-header .btn-success i,
+.header-actions .btn-success i {
+  transition: transform 0.3s ease;
+}
+
+.dashboard-header .btn-success:hover i,
+.header-actions .btn-success:hover i {
+  transform: rotate(90deg);
+}
+
+/* ============================================
+   USER DROPDOWN MENU
+   ============================================ */
+.user-menu .dropdown-toggle {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border: 2px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: 14px !important;
+  padding: 10px 18px !important;
+  color: white !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.user-menu .dropdown-toggle:hover {
+  background: rgba(0, 0, 0, 0.35) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  transform: translateY(-2px);
+}
+
+.user-menu .dropdown-toggle::after {
+  border-top-color: rgba(255,255,255,0.7);
+  margin-left: 8px;
+}
+
+.user-menu .dropdown-menu {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  padding: 8px;
+  min-width: 200px;
+  margin-top: 8px;
+  animation: dropdownSlide 0.2s ease;
+}
+
+@keyframes dropdownSlide {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.user-menu .dropdown-item {
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4b5563;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-menu .dropdown-item:hover {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e8f0fe 100%);
+  color: #2563eb;
+  transform: translateX(4px);
+}
+
+.user-menu .dropdown-item.text-danger:hover {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  color: #dc2626;
+}
+
+.user-menu .dropdown-divider {
+  margin: 8px 0;
+  border-color: #e5e7eb;
+}
+
+/* ============================================
+   SEARCH CARD
+   ============================================ */
+.card.shadow-sm {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.card.shadow-sm:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-body .form-control {
+  border-radius: 14px;
+  border: 2px solid #e5e7eb;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background: #f9fafb;
+}
+
+.card-body .form-control:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  background: white;
+}
+
+.card-body .form-control::placeholder {
+  color: #9ca3af;
+}
+
+/* Sort Filter dropdown */
+.card-body select.form-select,
+.card-body .form-select {
+  border-radius: 14px;
+  border: 2px solid #e5e7eb;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  background: #f9fafb;
+  transition: all 0.3s ease;
+}
+
+.card-body select.form-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  background: white;
+}
+
+/* ============================================
+   PRODUCT CARDS GRID
+   ============================================ */
+.row.g-4 {
+  --bs-gutter-x: 24px;
+  --bs-gutter-y: 24px;
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+.empty-products {
+  text-align: center;
+  padding: 80px 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.empty-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
+}
+
+.empty-icon i {
+  font-size: 40px;
+  color: #3b82f6;
+}
+
+.empty-products h3 {
+  color: #1f2937;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.empty-products p {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.empty-products .btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border: none;
+  border-radius: 14px;
+  padding: 12px 24px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+.empty-products .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+.d-flex.justify-content-center.mt-5 {
+  margin-top: 40px !important;
+  padding: 20px;
+}
+
+.d-flex.justify-content-center.mt-5 .btn-outline-primary {
+  border-radius: 14px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border-width: 2px;
+  border-color: #e5e7eb;
+  color: #4b5563;
+}
+
+.d-flex.justify-content-center.mt-5 .btn-outline-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-color: transparent;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+.d-flex.justify-content-center.mt-5 .btn-outline-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.d-flex.justify-content-center.mt-5 .align-self-center {
+  font-weight: 700;
+  color: #374151;
+  padding: 0 24px;
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.row.g-4 > .col-lg-4,
+.row.g-4 > .col-md-6,
+.row.g-4 > .col-12 {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.row.g-4 > *:nth-child(1) { animation-delay: 0.05s; }
+.row.g-4 > *:nth-child(2) { animation-delay: 0.1s; }
+.row.g-4 > *:nth-child(3) { animation-delay: 0.15s; }
+.row.g-4 > *:nth-child(4) { animation-delay: 0.2s; }
+.row.g-4 > *:nth-child(5) { animation-delay: 0.25s; }
+.row.g-4 > *:nth-child(6) { animation-delay: 0.3s; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1399px) {
+  .dashboard-header { max-width: 1140px; }
+}
+
+@media (max-width: 1199px) {
+  .dashboard-header { max-width: 960px; }
+}
+
+@media (max-width: 991px) {
+  .dashboard-header { max-width: 720px; }
+}
+
+@media (max-width: 767px) {
+  .dashboard-header {
+    max-width: 100%;
+    margin-left: 12px;
+    margin-right: 12px;
+    border-radius: 18px;
+    padding: 20px 24px;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .dashboard-header h2 {
+    font-size: 1.5rem;
+    justify-content: center;
+  }
+
+  .dashboard-header h2 i {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+
+  .header-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header-icon-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .dashboard-header .btn-success,
+  .header-actions .btn-success {
+    padding: 10px 18px !important;
+    font-size: 0.85rem;
+  }
+
+  .user-menu .dropdown-toggle {
+    padding: 8px 14px !important;
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ============================================
+   DROPDOWN FIX - z-index & overflow
+   ============================================ */
+
+/* Fix dropdown visibility */
+.user-menu {
+  position: relative;
+  z-index: 9999 !important;
+}
+
+.user-menu .dropdown {
+  position: relative;
+  z-index: 9999 !important;
+}
+
+/* The dropdown menu itself */
+.user-menu .dropdown-menu {
+  z-index: 99999 !important;
+  position: absolute !important;
+  top: 100% !important;
+  right: 0 !important;
+  left: auto !important;
+  margin-top: 8px !important;
+}
+
+/* Fix parent containers that might clip */
+.dashboard-header {
+  overflow: visible !important;
+}
+
+.header-actions {
+  overflow: visible !important;
+  position: relative;
+  z-index: 9999 !important;
+}
+
+/* Ensure body doesn't clip */
+body {
+  overflow-x: hidden;
+}
+
+/* Fix for any parent with overflow hidden */
+.container,
+.container-fluid,
+.mt-4 {
+  overflow: visible !important;
+}
+
+/* Make sure dropdown is above everything */
+.dropdown-menu.show {
+  z-index: 999999 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Fix Bootstrap dropdown positioning */
+.dropdown-menu-end {
+  --bs-position: end;
+  right: 0 !important;
+  left: auto !important;
+}
+
+
+/* ============================================
+   NOTIFICATION DROPDOWN - EPIC DESIGN
+   ============================================ */
+
+/* The notification button container */
+.header-icon-btn.notification-btn {
+  position: relative;
+}
+
+/* Notification Dropdown Panel */
+.notification-panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 380px;
+  max-width: calc(100vw - 24px);
+  max-height: 400px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  z-index: 999999 !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: dropdownSlide 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Panel Header */
+.notification-panel h5 {
+  padding: 20px 24px 16px;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  flex-shrink: 0;
+}
+
+.notification-panel h5::before {
+  content: '🔔';
+  font-size: 1.2rem;
+}
+
+/* Scrollable content area - FIXED */
+.notification-panel > div,
+.notification-panel .notification-list {
+  overflow-y: auto;
+  flex: 1;
+  padding: 8px;
+  max-height: 320px;
+}
+
+/* Custom scrollbar */
+.notification-panel ::-webkit-scrollbar {
+  width: 5px;
+}
+
+.notification-panel ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.notification-panel ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+/* No notifications message */
+.notification-panel > p {
+  text-align: center;
+  padding: 40px 20px;
+  color: #94a3b8;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.notification-panel > p::before {
+  content: '🔕';
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+/* Individual notification item - FIXED */
+.notification-item {
+  padding: 14px 16px;
+  margin: 4px 0;
+  border-radius: 14px;
+  background: white;
+  border: 1px solid #f1f5f9;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  animation: itemSlide 0.3s ease forwards;
+}
+
+.notification-item:hover {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e8f0fe 100%);
+  border-color: #dbeafe;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+@keyframes itemSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.notification-item:nth-child(1) { animation-delay: 0.05s; }
+.notification-item:nth-child(2) { animation-delay: 0.1s; }
+.notification-item:nth-child(3) { animation-delay: 0.15s; }
+.notification-item:nth-child(4) { animation-delay: 0.2s; }
+.notification-item:nth-child(5) { animation-delay: 0.25s; }
+
+/* Notification message - FIXED: prevent text overflow */
+.notification-item p {
+  margin: 0 0 6px 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Notification timestamp */
+.notification-item small {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.notification-item small::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3b82f6;
+  flex-shrink: 0;
+}
+
+/* Mark as read button */
+.notification-item .mark-read-btn {
+  margin-top: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.notification-item .mark-read-btn:hover {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+/* Mark all as read */
+.notification-panel .mark-all-btn {
+  padding: 10px 16px;
+  margin: 8px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg,  #764ba2 0%, #1d4ed8 100%);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.notification-panel .mark-all-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* ============================================
+   FIX: Ensure panel doesn't push content
+   ============================================ */
+
+/* The header-actions container needs relative positioning */
+.header-actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Ensure dashboard-header doesn't clip */
+.dashboard-header {
+  overflow: visible !important;
+}
+
+/* Container fix */
+.container.mt-4 {
+  overflow: visible !important;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+  .notification-panel {
+    width: calc(100vw - 24px);
+    right: -60px; /* Adjust to center under bell */
+  }
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "CreatedAt": "2023-01-02T10:00:00Z",
+    "UpdatedAt": "2023-02-15T14:30:00Z",
+    "Name": "Wireless Mouse",
+    "Description": "Ergonomic wireless mouse with 2.4GHz connectivity and 1600 DPI precision.",
+    "Price": 29.99,
+    "Stock": 150
+  },
+  {
+    "CreatedAt": "2023-06-18T08:15:00Z",
+    "UpdatedAt": null,
+    "Name": "Mechanical Keyboard",
+    "Description": "RGB backlit mechanical keyboard with blue switches and aluminum frame.",
+    "Price": 89.50,
+    "Stock": 75
+  },
+  {
+    "CreatedAt": "2023-10-22T11:45:00Z",
+    "UpdatedAt": "2023-11-28T09:20:00Z",
+    "Name": "27-inch Monitor",
+    "Description": "4K UHD IPS display with 144Hz refresh rate and HDR support.",
+    "Price": 349.00,
+    "Stock": 30
+  },
+  {
+    "CreatedAt": "2024-03-15T14:00:00Z",
+    "UpdatedAt": null,
+    "Name": "USB-C Hub",
+    "Description": "7-in-1 USB-C hub with HDMI, USB 3.0, SD card reader, and 100W PD charging.",
+    "Price": 45.99,
+    "Stock": 200
+  },
+  {
+    "CreatedAt": "2025-04-25T09:30:00Z",
+    "UpdatedAt": null,
+    "Name": "Noise Cancelling Headphones",
+    "Description": "Over-ear Bluetooth headphones with active noise cancellation and 30h battery life.",
+    "Price": 199.99,
+    "Stock": 50
+  },
+  {
+    "CreatedAt": "2025-06-10T16:20:00Z",
+    "UpdatedAt": "2025-07-20T11:00:00Z",
+    "Name": "Webcam 1080p",
+    "Description": "Full HD webcam with auto-focus, dual microphones, and privacy shutter.",
+    "Price": 59.99,
+    "Stock": 120
+  },
+  {
+    "CreatedAt": "2026-06-28T07:00:00Z",
+    "UpdatedAt": null,
+    "Name": "Laptop Stand",
+    "Description": "Adjustable aluminum laptop stand with ergonomic height and angle settings.",
+    "Price": 34.99,
+    "Stock": 85
+  },
+  {
+    "CreatedAt": "2026-06-12T13:45:00Z",
+    "UpdatedAt": "2026-07-27T10:15:00Z",
+    "Name": "External SSD 1TB",
+    "Description": "Portable SSD with USB 3.2 Gen 2, read speeds up to 1050MB/s.",
+    "Price": 129.99,
+    "Stock": 40
+  }
+]

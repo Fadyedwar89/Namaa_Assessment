@@ -1,0 +1,377 @@
+.order-card {
+  background: white;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+
+  transition: 0.35s;
+
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.order-card:hover {
+  transform: translateY(-14px) scale(1.02);
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.15),
+    0 8px 20px rgba(37, 99, 235, 0.2);
+}
+
+.order-top-line {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.order-top-line::after {
+  content: "";
+
+  position: absolute;
+
+  left: -150px;
+
+  top: 0;
+
+  width: 120px;
+
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.75),
+    transparent
+  );
+
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  to {
+    left: 120%;
+  }
+}
+.order-header {
+  padding: 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.order-id {
+  margin: 0;
+
+  font-weight: 700;
+}
+
+.order-body {
+  padding: 0 25px 25px;
+
+  flex: 1;
+}
+
+.info-row {
+  display: flex;
+
+  gap: 15px;
+
+  align-items: center;
+
+  margin-bottom: 22px;
+}
+
+.info-row i {
+  width: 52px;
+
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background: #eef5ff;
+
+  color: #0d6efd;
+
+  font-size: 20px;
+}
+
+.info-row span {
+  display: block;
+
+  color: #888;
+
+  font-size: 13px;
+}
+
+.info-row strong {
+  font-size: 18px;
+}
+
+.order-footer {
+  padding: 20px;
+
+  display: flex;
+
+  gap: 12px;
+}
+
+.action-btn {
+  flex: 1;
+
+  border: none;
+
+  border-radius: 14px;
+
+  padding: 12px;
+
+  font-weight: 600;
+
+  color: white;
+
+  transition: 0.3s;
+}
+
+.action-btn {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.action-btn::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  transform: translateX(-100%);
+
+  transition: 0.45s;
+}
+
+.action-btn:hover::before {
+  transform: translateX(0);
+}
+
+.action-btn:hover {
+  transform: translateY(-3px);
+}
+
+.primary {
+  background: #2563eb;
+}
+
+.warning {
+  background: #f59e0b;
+}
+
+.danger {
+  background: #dc2626;
+}
+/* ============================
+      CARD ANIMATION
+============================ */
+
+.order-card {
+  opacity: 0;
+
+  transform: translateY(40px) scale(0.96);
+
+  animation: cardAppear 0.7s ease forwards;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+
+    transform: translateY(40px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Delay لكل كارت */
+
+.col-lg-4:nth-child(1) .order-card {
+  animation-delay: 0.05s;
+}
+.col-lg-4:nth-child(2) .order-card {
+  animation-delay: 0.12s;
+}
+.col-lg-4:nth-child(3) .order-card {
+  animation-delay: 0.19s;
+}
+.col-lg-4:nth-child(4) .order-card {
+  animation-delay: 0.26s;
+}
+.col-lg-4:nth-child(5) .order-card {
+  animation-delay: 0.33s;
+}
+.col-lg-4:nth-child(6) .order-card {
+  animation-delay: 0.4s;
+}
+.col-lg-4:nth-child(7) .order-card {
+  animation-delay: 0.47s;
+}
+.col-lg-4:nth-child(8) .order-card {
+  animation-delay: 0.54s;
+}
+.col-lg-4:nth-child(9) .order-card {
+  animation-delay: 0.61s;
+}
+.col-lg-4:nth-child(10) .order-card {
+  animation-delay: 0.68s;
+}
+.col-lg-4:nth-child(11) .order-card {
+  animation-delay: 0.75s;
+}
+.col-lg-4:nth-child(12) .order-card {
+  animation-delay: 0.82s;
+}
+
+/*==========================
+      STATUS ANIMATION
+==========================*/
+
+.badge {
+  position: relative;
+
+  overflow: hidden;
+
+  font-weight: 600;
+
+  letter-spacing: 0.4px;
+
+  transition: 0.35s;
+}
+
+/* لمعان */
+
+.badge::after {
+  content: "";
+
+  position: absolute;
+
+  left: -120%;
+
+  top: 0;
+
+  width: 80px;
+
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+
+  animation: badgeShine 3s infinite;
+}
+
+@keyframes badgeShine {
+  to {
+    left: 130%;
+  }
+}
+
+/* Pending */
+
+.bg-warning {
+  animation: pulseBadge 1.8s infinite;
+}
+
+@keyframes pulseBadge {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.45);
+  }
+
+  70% {
+    box-shadow: 0 0 0 12px rgba(255, 193, 7, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
+  }
+}
+
+/* Processing */
+
+.bg-primary i {
+  animation: gearRotate 2.2s linear infinite;
+}
+
+@keyframes gearRotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Shipped */
+
+.bg-success i {
+  animation: truckMove 1.8s ease-in-out infinite;
+}
+
+@keyframes truckMove {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+/* Cancelled */
+
+.bg-danger {
+  animation: cancelShake 3s infinite;
+}
+
+@keyframes cancelShake {
+  0%,
+  92%,
+  100% {
+    transform: translateX(0);
+  }
+
+  94% {
+    transform: translateX(-2px);
+  }
+
+  96% {
+    transform: translateX(2px);
+  }
+
+  98% {
+    transform: translateX(-2px);
+  }
+}

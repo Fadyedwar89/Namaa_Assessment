@@ -1,0 +1,297 @@
+/* ============================================
+   ORDER TIMELINE - EPIC DESIGN
+   Matching Products.css style
+   ============================================ */
+
+.timeline-card {
+  background: linear-gradient(135deg, #f3f63b 5%, #2563eb 50%, #d81d1d 100%);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3), 0 0 0 1px rgba(255,255,255,0.1) inset;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 28px;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1320px;
+}
+
+/* Animated background shapes */
+.timeline-card::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: floatShape 8s ease-in-out infinite;
+}
+
+.timeline-card::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 15%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: floatShape 10s ease-in-out infinite reverse;
+}
+
+@keyframes floatShape {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(15px, -10px) scale(1.05); }
+  66% { transform: translate(-8px, 8px) scale(0.95); }
+}
+
+/* Title */
+.timeline-card h2 {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0 0 28px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.timeline-card h2 i {
+  font-size: 1.4rem;
+  background: rgba(255, 255, 255, 0.2);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* ============================================
+   TIMELINE
+   ============================================ */
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+  gap: 16px;
+}
+
+/* Connecting line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 60px;
+  right: 60px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  z-index: 0;
+}
+
+/* ============================================
+   TIMELINE ITEM
+   ============================================ */
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   TIMELINE ICON
+   ============================================ */
+.timeline-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border: 3px solid rgba(255,255,255,0.3);
+}
+
+.timeline-icon i {
+  color: white;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+/* Active state */
+.timeline-item.active .timeline-icon {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 8px rgba(255,255,255,0.15), 0 8px 25px rgba(0,0,0,0.3);
+  animation: activePulse 2s infinite;
+}
+
+.timeline-item.active .timeline-icon i {
+  transform: scale(1.1);
+}
+
+@keyframes activePulse {
+  0%, 100% { box-shadow: 0 0 0 8px rgba(255,255,255,0.15), 0 8px 25px rgba(0,0,0,0.3); }
+  50% { box-shadow: 0 0 0 12px rgba(255,255,255,0.1), 0 8px 30px rgba(0,0,0,0.4); }
+}
+
+/* Completed state */
+.timeline-icon.completed {
+  border-color: rgba(255,255,255,0.5);
+}
+
+.timeline-icon.completed i {
+  font-size: 1.1rem;
+}
+
+/* Inactive state (default gray) */
+.timeline-icon:not(.completed):not([style*="background"]) {
+  background: rgba(255,255,255,0.15) !important;
+  border-color: rgba(255,255,255,0.2);
+}
+
+.timeline-icon:not(.completed):not([style*="background"]) i {
+  color: rgba(255,255,255,0.5);
+}
+
+/* ============================================
+   TIMELINE CONTENT
+   ============================================ */
+.timeline-content h5 {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.timeline-item.active .timeline-content h5 {
+  transform: scale(1.1);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Inactive text */
+.timeline-item:not(.active) .timeline-content h5 {
+  color: rgba(255,255,255,0.6);
+}
+
+/* ============================================
+   CANCELLED STATE
+   ============================================ */
+.timeline-item:has(.timeline-icon[style*="#dc3545"]) .timeline-content h5 {
+  color: #fecaca;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.timeline-item {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+.timeline-item:nth-child(4) { animation-delay: 0.4s; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1399px) {
+  .timeline-card { max-width: 1140px; }
+}
+
+@media (max-width: 1199px) {
+  .timeline-card { max-width: 960px; }
+}
+
+@media (max-width: 991px) {
+  .timeline-card { max-width: 720px; }
+
+  .timeline::before {
+    left: 40px;
+    right: 40px;
+  }
+
+  .timeline-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .timeline-icon i {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .timeline-card {
+    max-width: 100%;
+    margin-left: 12px;
+    margin-right: 12px;
+    border-radius: 18px;
+    padding: 24px 20px;
+  }
+
+  .timeline-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .timeline-card h2 i {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .timeline {
+    flex-wrap: wrap;
+    gap: 20px 12px;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline-item {
+    flex: 1 1 40%;
+  }
+
+  .timeline-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+  }
+
+  .timeline-content h5 {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-item {
+    flex: 1 1 45%;
+  }
+}

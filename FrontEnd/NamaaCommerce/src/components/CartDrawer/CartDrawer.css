@@ -1,0 +1,384 @@
+/* ============================================
+   CART DRAWER - EPIC DESIGN
+   Matching Products.css & OrderTimeline.css style
+   ============================================ */
+
+/* ============================================
+   DRAWER OVERLAY
+   ============================================ */
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.drawer-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ============================================
+   CART DRAWER
+   ============================================ */
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 420px;
+  max-width: 100%;
+  height: 100vh;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  z-index: 1050;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cart-drawer.open {
+  transform: translateX(0);
+}
+
+/* ============================================
+   DRAWER HEADER
+   ============================================ */
+.drawer-header {
+  background: linear-gradient(135deg, #7d3bf6 0%, #b325eb 100%);
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.drawer-header::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.drawer-header h3 {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.drawer-header h3 i {
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.2);
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Close button */
+.drawer-header .btn-close {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 8px;
+  width: 36px;
+  height: 36px;
+  opacity: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.15);
+  filter: brightness(0) invert(1);
+}
+
+.drawer-header .btn-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* ============================================
+   DRAWER BODY
+   ============================================ */
+.drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+/* Custom scrollbar */
+.drawer-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.drawer-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.drawer-body::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.drawer-body::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ============================================
+   EMPTY CART
+   ============================================ */
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.empty-cart i {
+  font-size: 64px;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+  animation: floatCart 3s ease-in-out infinite;
+}
+
+@keyframes floatCart {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.empty-cart h5 {
+  color: #64748b;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* ============================================
+   CART ITEM
+   ============================================ */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: white;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f1f5f9;
+  transition: all 0.3s ease;
+  animation: slideInRight 0.4s ease forwards;
+}
+
+.cart-item:hover {
+  transform: translateX(-4px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-color: #e2e8f0;
+}
+
+.cart-item:nth-child(1) { animation-delay: 0.05s; }
+.cart-item:nth-child(2) { animation-delay: 0.1s; }
+.cart-item:nth-child(3) { animation-delay: 0.15s; }
+.cart-item:nth-child(4) { animation-delay: 0.2s; }
+.cart-item:nth-child(5) { animation-delay: 0.25s; }
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.cart-item h6 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 4px 0;
+}
+
+.cart-item small {
+  color: #3b82f6;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   QUANTITY CONTROL
+   ============================================ */
+.qty-control {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: #f8fafc;
+  border-radius: 50px;
+  padding: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+.qty-control button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  color: #667eea;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.qty-control button:hover {
+  background: #667eea;
+  color: white;
+  transform: scale(1.15);
+}
+
+.qty-control button:active {
+  transform: scale(0.95);
+}
+
+.qty-control span {
+  width: 36px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1e293b;
+  user-select: none;
+}
+
+/* ============================================
+   DRAWER FOOTER
+   ============================================ */
+.drawer-footer {
+  padding: 20px 24px 24px;
+  background: white;
+  border-top: 1px solid #f1f5f9;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.drawer-footer h4 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer-footer h4::before {
+  content: 'Total:';
+  font-size: 1rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+/* Create Order Button */
+.drawer-footer .btn-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border: none !important;
+  border-radius: 14px !important;
+  padding: 14px 24px !important;
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.drawer-footer .btn-success::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.drawer-footer .btn-success:hover::before {
+  left: 100%;
+}
+
+.drawer-footer .btn-success:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+}
+
+.drawer-footer .btn-success:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.drawer-footer .btn-success:disabled {
+  background: #cbd5e1 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Spinner */
+.drawer-footer .spinner-border {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-width: 0.15em;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+  .cart-drawer {
+    width: 100%;
+  }
+
+  .drawer-header {
+    padding: 20px;
+  }
+
+  .drawer-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .drawer-body {
+    padding: 16px;
+  }
+
+  .cart-item {
+    padding: 12px;
+  }
+
+  .drawer-footer {
+    padding: 16px 20px 20px;
+  }
+}

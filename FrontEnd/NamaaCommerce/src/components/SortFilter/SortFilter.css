@@ -1,0 +1,91 @@
+.sort-wrapper {
+  position: relative;
+}
+
+.sort-button {
+  width: 100%;
+
+  height: 54px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background: white;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 0 20px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+.sort-button:hover {
+  transform: translateY(-2px);
+}
+
+.sort-button div {
+  display: flex;
+
+  gap: 12px;
+
+  align-items: center;
+}
+
+.sort-menu {
+  position: absolute;
+
+  top: 62px;
+
+  width: 100%;
+
+  background: white;
+
+  border-radius: 18px;
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+
+  overflow: hidden;
+
+  z-index: 1000;
+
+  animation: fade 0.25s;
+}
+
+.sort-item {
+  padding: 15px 20px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  gap: 12px;
+
+  align-items: center;
+
+  transition: 0.25s;
+}
+
+.sort-item:hover {
+  background: #eff6ff;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
