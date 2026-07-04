@@ -179,64 +179,8 @@ Swagger is available when running the backend project.
 
 SignalR is used to provide real-time notifications between the server and connected clients.
 
----
-
-## 📸 Screenshots
-
-> Add screenshots here.
-
-Example:
-
-```
-Login Page
-```
-<img width="800" height="590" alt="image" src="https://github.com/user-attachments/assets/1d20dafb-bdd9-4fa1-b59d-66f3d10c98d2" />
-<img width="1242" height="557" alt="image" src="https://github.com/user-attachments/assets/dad87207-4f82-4ed8-8900-59c33baeb4e9" />
-
-```
-Products
-```
-<img width="1119" height="611" alt="image" src="https://github.com/user-attachments/assets/d68b99e4-17cb-41c9-9eff-52d2370c2035" />
-<img width="1342" height="609" alt="image" src="https://github.com/user-attachments/assets/a7ed6232-5cf6-4d33-8bf3-a9423696bd7b" />
-Admin
-<img width="1138" height="484" alt="image" src="https://github.com/user-attachments/assets/afca5b23-9b7b-469f-aa0c-cc534a62367e" />
-<img width="587" height="424" alt="image" src="https://github.com/user-attachments/assets/8a2615b4-d6e8-4e44-9f84-d7e295d2ea57" />
-<img width="730" height="515" alt="image" src="https://github.com/user-attachments/assets/09c41081-1245-4498-8b9b-1a5a9cd0fe02" />
-
-
-
-```
-Orders
-```
-<img width="1282" height="589" alt="image" src="https://github.com/user-attachments/assets/eaf87ecb-70e2-4c56-9f04-19360939a622" />
-<img width="1303" height="528" alt="image" src="https://github.com/user-attachments/assets/6776ffb5-5660-43a6-808a-572a74659d5d" />
-<img width="1206" height="602" alt="image" src="https://github.com/user-attachments/assets/d42741d4-3c23-4828-808f-b9f39b944911" />
-<img width="1221" height="532" alt="image" src="https://github.com/user-attachments/assets/63fd217a-f28b-4c3d-be8a-24f41f6d1332" />
-<img width="1234" height="525" alt="image" src="https://github.com/user-attachments/assets/ec53bafd-429c-4485-a851-ad4427244786" />
-<img width="1226" height="505" alt="image" src="https://github.com/user-attachments/assets/aa1b74ad-ffe4-4c3e-942d-e7b37281ad92" />
-<img width="1268" height="528" alt="image" src="https://github.com/user-attachments/assets/b2a4f74d-1555-4a01-b441-413f8cd8ff4c" />
-<img width="640" height="397" alt="image" src="https://github.com/user-attachments/assets/a89cc9b5-7395-4406-86a1-2220e6808b37" />
-
-Admin
-<img width="1265" height="590" alt="image" src="https://github.com/user-attachments/assets/a3e45d54-5f44-470f-be33-fb3f5b1473b1" />
-<img width="742" height="587" alt="image" src="https://github.com/user-attachments/assets/96f0200e-8e41-4ce7-876b-899e29a550e6" />
-
-```
-Orders Details
-```
-<img width="985" height="606" alt="image" src="https://github.com/user-attachments/assets/ed2b3115-a256-42c1-9428-a7acc499acca" />
-<img width="963" height="603" alt="image" src="https://github.com/user-attachments/assets/197226cd-91fc-479d-8d2c-7268fc4a9993" />
-Admin
-<img width="431" height="472" alt="image" src="https://github.com/user-attachments/assets/794290a4-54d9-4cd2-92d6-95d31a0cbe31" />
-```
-Notifications
-```
-<img width="1237" height="411" alt="image" src="https://github.com/user-attachments/assets/2ec31d27-5a15-47eb-bd83-121f07985809" />
-
----
 
 ## 📈 Future Improvements
-
 * Payment Gateway Integration
 * Wishlist
 * Product Reviews Enhancements
