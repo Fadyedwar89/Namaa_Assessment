@@ -108,7 +108,9 @@ function Login() {
         </div>
       </div>
     </section>
+    
   );
 }
 
 export default Login;
+localStorage.getItem("role");

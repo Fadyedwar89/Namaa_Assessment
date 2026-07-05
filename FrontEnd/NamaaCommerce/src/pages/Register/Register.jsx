@@ -6,106 +6,83 @@ import "./Register.css";
 
 function Register() {
   const navigate = useNavigate();
-const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({});
   const [form, setForm] = useState({
     displayName: "",
     email: "",
     password: "",
   });
+ const handleChange = (e) => {
+   setServerErrors([]);
 
+   setForm({
+     ...form,
+     [e.target.name]: e.target.value,
+   });
+ };
+ const [serverErrors, setServerErrors] = useState([]);
   const [confirmPassword, setConfirmPassword] = useState("");
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  
+ 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setServerErrors([]);
+    const newErrors = {};
 
-  const newErrors = {};
+    if (!form.displayName.trim()) {
+      newErrors.displayName = "Name is required";
+    }
 
-  if (!form.displayName.trim()) {
-    newErrors.displayName = "Name is required";
-  }
+    if (!form.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
+      newErrors.email = "Invalid email";
+    }
 
-  if (!form.email.trim()) {
-    newErrors.email = "Email is required";
-  } else if (!/\S+@\S+\.\S+/.test(form.email)) {
-    newErrors.email = "Invalid email";
-  }
+    if (!form.password) {
+      newErrors.password = "Password is required";
+    } else if (form.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters";
+    }
 
-  if (!form.password) {
-    newErrors.password = "Password is required";
-  } else if (form.password.length < 6) {
-    newErrors.password = "Password must be at least 6 characters";
-  }
+    if (form.password !== confirmPassword) {
+      newErrors.confirmPassword = "Passwords do not match";
+    }
 
-  if (form.password !== confirmPassword) {
-    newErrors.confirmPassword = "Passwords do not match";
-  }
+    setErrors(newErrors);
 
-  setErrors(newErrors);
+    if (Object.keys(newErrors).length > 0) return;
 
-  if (Object.keys(newErrors).length > 0) return;
+    try {
+      await authService.register(form);
 
-  try {
-    await authService.register(form);
+      const data = await authService.login({
+        email: form.email,
+        password: form.password,
+      });
 
-    const data = await authService.login({
-      email: form.email,
-      password: form.password,
-    });
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("displayName", data.displayName);
+      localStorage.setItem("email", data.email);
 
-    localStorage.setItem("token", data.token);
-    localStorage.setItem("displayName", data.displayName);
-    localStorage.setItem("email", data.email);
+      const decoded = jwtDecode(data.token);
 
-    const decoded = jwtDecode(data.token);
+      const role =
+        decoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
 
-    const role =
-      decoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+      localStorage.setItem("role", role);
 
-    localStorage.setItem("role", role);
+      navigate("/products");
+    } catch (err) {
+      const error = err.response?.data;
 
-    navigate("/products");
-  } catch (err) {
-    console.log(err.response?.data);
-
-    alert(
-      err.response?.data?.errors?.[0] ||
-        err.response?.data?.title ||
-        "Registration Failed",
-    );
-  }
-};
-const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  if (form.password !== confirmPassword) {
-    alert("Passwords do not match");
-    return;
-  }
-
-  try {
-    await authService.register(form);
-
-    const data = await authService.login({
-      email: form.email,
-      password: form.password,
-    });
-
-    localStorage.setItem("token", data.token);
-    localStorage.setItem("displayName", data.displayName);
-    localStorage.setItem("email", data.email);
-
-    const decoded = jwtDecode(data.token);
-
-    const role =
-      decoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
-
-    localStorage.setItem("role", role);
-
-    navigate("/products");
-  } catch (err) {
-    console.log(err.response?.data);
-    alert("Registration Failed");
-  }
-};
+      if (error?.Errors) {
+        setServerErrors(error.Errors);
+      } else {
+        setServerErrors([error?.ErrorMessage || "Registration Failed"]);
+      }
+    }
+  };
   return (
     <section className="register-page">
       <div className="container">
@@ -192,6 +169,15 @@ const handleSubmit = async (e) => {
                       </div>
                     )}
                   </div>
+                  {serverErrors.length > 0 && (
+                    <div className="alert alert-danger">
+                      <ul className="mb-0">
+                        {serverErrors.map((err, index) => (
+                          <li key={index}>{err}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                   <button type="submit" className="btn btn-primary w-100 py-2">
                     Register
                   </button>

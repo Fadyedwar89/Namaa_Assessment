@@ -29,7 +29,8 @@ namespace Services.Implementation.NotificationService
         }
         public async Task SendNewOrderAsync(NotificationDto notification)
         {
-            await _hubContext.Clients.All
+            Console.WriteLine("Sending to Admins Group");
+            await _hubContext.Clients.Group("Admins")
     .SendAsync("ReceiveNotification", notification);
             var entity = new Notification
             {

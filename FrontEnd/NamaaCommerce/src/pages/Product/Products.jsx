@@ -384,7 +384,6 @@ export default function Products() {
           <div className="dropdown user-menu">
             <button className="btn dropdown-toggle" data-bs-toggle="dropdown">
               <i className="fa-solid fa-user me-2"></i>
-
               {localStorage.getItem("displayName")}
             </button>
 
@@ -412,36 +411,49 @@ export default function Products() {
               <li>
                 <hr className="dropdown-divider" />
               </li>
-              <li>
-                <button
-                  className="dropdown-item"
-                  onClick={() => navigate("/login")}
-                >
-                  <i class="fa-solid fa-user-lock"></i>
-                  Login
-                </button>
-              </li>
-              <li>
-                <button
-                  className="dropdown-item"
-                  onClick={() => navigate("/register")}
-                >
-                  <i class="fa-solid fa-person-circle-plus"></i>
-                  Register
-                </button>
-              </li>
-              <li>
-                <button
-                  className="dropdown-item text-danger"
-                  onClick={() => {
-                    localStorage.clear();
-                    navigate("/login");
-                  }}
-                >
-                  <i className="fa-solid fa-right-from-bracket me-2"></i>
-                  Logout
-                </button>
-              </li>
+
+              {/* Login & Register - ONLY when NOT logged in */}
+              {!localStorage.getItem("token") && (
+                <>
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => navigate("/login")}
+                    >
+                      <i className="fa-solid fa-user-lock me-2"></i>
+                      Login
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => navigate("/register")}
+                    >
+                      <i className="fa-solid fa-person-circle-plus me-2"></i>
+                      Register
+                    </button>
+                  </li>
+                  <li>
+                    <hr className="dropdown-divider" />
+                  </li>
+                </>
+              )}
+
+              {/* Logout - ONLY when logged in */}
+              {localStorage.getItem("token") && (
+                <li>
+                  <button
+                    className="dropdown-item text-danger"
+                    onClick={() => {
+                      localStorage.clear();
+                      navigate("/login");
+                    }}
+                  >
+                    <i className="fa-solid fa-right-from-bracket me-2"></i>
+                    Logout
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
         </div>

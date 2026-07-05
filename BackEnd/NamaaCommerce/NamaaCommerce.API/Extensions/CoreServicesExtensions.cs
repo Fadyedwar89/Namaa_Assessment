@@ -19,6 +19,7 @@ namespace NamaaCommerce.API.Extensions
 
             services.AddScoped<INotificationService, NotificationService>();
             services.AddScoped<ISignalRNotificationService, SignalRService>();
+
             services.AddSignalR();
 
             services.AddHttpContextAccessor();
