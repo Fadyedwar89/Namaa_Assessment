@@ -1,10 +1,10 @@
+
 # 💻 NamaaCommerce Frontend
 
 <p align="center">
 
 ![React](https://img.shields.io/badge/React-19-61DAFB)
 ![Vite](https://img.shields.io/badge/Vite-646CFF)
-![Redux](https://img.shields.io/badge/State-Redux-764ABC)
 ![Bootstrap](https://img.shields.io/badge/UI-Bootstrap-7952B3)
 ![Axios](https://img.shields.io/badge/API-Axios-5A29E4)
 ![SignalR](https://img.shields.io/badge/Realtime-SignalR-orange)
@@ -15,23 +15,25 @@
 
 # 📖 Overview
 
-NamaaCommerce Frontend is a modern React application built with **React + Vite**.
+NamaaCommerce Frontend is a modern and responsive React application built using **React + Vite**.
 
-It provides a clean and responsive user interface for both customers and administrators, communicating with the ASP.NET Core Web API through REST APIs and SignalR.
+The application provides a clean user interface for customers and administrators, communicating with the ASP.NET Core Web API through REST APIs and SignalR for real-time features.
+
+The frontend follows a structured and maintainable architecture with reusable components, custom hooks, and separated service layers.
 
 ---
 
 # 🚀 Technologies
 
-- React
-- Vite
-- React Router
-- Redux
-- Axios
-- Bootstrap
-- React Bootstrap
-- Font Awesome
-- SignalR Client
+* React 19
+* Vite
+* React Router DOM
+* Axios
+* Bootstrap
+* React Bootstrap
+* Font Awesome
+* SignalR Client
+* Custom React Hooks
 
 ---
 
@@ -39,35 +41,51 @@ It provides a clean and responsive user interface for both customers and adminis
 
 ## Customer
 
-- User Registration
-- User Login
-- Browse Products
-- Product Details
-- Shopping Cart
-- Place Orders
-- View Orders
-- Order Details
-- Real-Time Notifications
+* User Registration
+* User Login
+* Browse Products
+* Product Details
+* Shopping Cart
+* Place Orders
+* View Orders
+* Order Details
+* Real-Time Notifications
 
 ---
 
 ## Admin Dashboard
 
-- Products CRUD
-- Orders Management
-- Notifications
+* Products CRUD
+* Orders Management
+* Order Status Updates
+* Order Statistics Dashboard
+* Customer Orders Monitoring
+* Real-Time Notifications
+
+---
+
+## Orders Management
+
+* View Orders
+* Search Orders
+* Filter Orders By Status
+* Pagination
+* Update Order Status
+* Cancel Orders
+* Order Details
+* Order Statistics
 
 ---
 
 ## UI Features
 
-- Responsive Design
-- Search
-- Filtering
-- Sorting
-- Pagination
-- Toast Notifications
-- Loading Indicators
+* Responsive Design
+* Search
+* Filtering
+* Pagination
+* Toast Notifications
+* Loading Indicators
+* Reusable UI Components
 
 ---
 
@@ -76,35 +94,66 @@ It provides a clean and responsive user interface for both customers and adminis
 ```
 src
 │
-├── assets
+├── api
+│
 ├── components
+│   ├── Layout
+│   ├── Orders
+│   ├── Notifications
+│   └── Common
+│
 ├── pages
-├── services
-├── redux
-├── routes
+│
 ├── hooks
-├── layouts
-└── utils
+│
+├── services
+│
+├── routes
+│
+├── utils
+│
+└── assets
 ```
+
+---
+
+# 🏗️ Architecture & Code Organization
+
+The frontend follows a clean and maintainable structure:
+
+* Component-based architecture
+* Reusable UI components
+* Custom hooks for business logic separation
+* Service layer for API communication
+* Protected routes based on user roles
+* Organized feature-based folders
+* Separation between UI and application logic
 
 ---
 
 # 🔐 Authentication
 
-The application authenticates users using **JWT**.
+The application authenticates users using **JWT Authentication**.
 
 Supported Roles:
 
-- Admin
-- Customer
+* Admin
+* Customer
 
 Protected routes ensure users can only access pages permitted by their roles.
 
 ---
 
-# 🔔 Real-Time Notifications
+# 🔔 Real-Time Communication
 
-SignalR Client is integrated to receive notifications instantly from the backend without refreshing the page.
+SignalR Client is integrated for real-time communication with the backend.
+
+Implemented features:
+
+* Instant notifications
+* Real-time order events
+* Updates without page refresh
+* Live communication between backend and frontend
 
 ---
 
@@ -112,12 +161,13 @@ SignalR Client is integrated to receive notifications instantly from the backend
 
 Axios is used for communication with the ASP.NET Core Web API.
 
-Features include:
+Implemented API features:
 
-- Authentication
-- Products
-- Orders
-- Notifications
+* Authentication
+* Products Management
+* Orders Management
+* Notifications
+* Order Statistics
 
 ---
 
@@ -125,9 +175,9 @@ Features include:
 
 The application uses:
 
-- Bootstrap
-- React Bootstrap
-- Font Awesome
+* Bootstrap
+* React Bootstrap
+* Font Awesome
 
 to provide a responsive and modern user experience.
 
@@ -161,73 +211,59 @@ http://localhost:5173
 
 # 🔗 Backend
 
-Before running the frontend, make sure the backend API is running.
+Before running the frontend, make sure the ASP.NET Core backend API is running.
 
 Example:
 
 ```
-http://localhost:5050
+https://localhost:7043
 ```
 
 Update the API base URL if necessary.
 
 ---
 
-## 📸 Screenshots
-Example:
+# 📸 Screenshots
 
-Login Page
-
+## Login Page
 
 <img width="800" height="590" alt="image" src="https://github.com/user-attachments/assets/1d20dafb-bdd9-4fa1-b59d-66f3d10c98d2" />
+
 <img width="1242" height="557" alt="image" src="https://github.com/user-attachments/assets/dad87207-4f82-4ed8-8900-59c33baeb4e9" />
 
+---
 
-
-Products
-
+## Products
 
 <img width="1119" height="611" alt="image" src="https://github.com/user-attachments/assets/d68b99e4-17cb-41c9-9eff-52d2370c2035" />
+
 <img width="1342" height="609" alt="image" src="https://github.com/user-attachments/assets/a7ed6232-5cf6-4d33-8bf3-a9423696bd7b" />
-Admin
+
+---
+
+## Admin Dashboard
+
 <img width="1138" height="484" alt="image" src="https://github.com/user-attachments/assets/afca5b23-9b7b-469f-aa0c-cc534a62367e" />
+
 <img width="587" height="424" alt="image" src="https://github.com/user-attachments/assets/8a2615b4-d6e8-4e44-9f84-d7e295d2ea57" />
-<img width="730" height="515" alt="image" src="https://github.com/user-attachments/assets/09c41081-1245-4498-8b9b-1a5a9cd0fe02" />
 
+---
 
-
-
-Orders
-
+## Orders
 
 <img width="1155" height="426" alt="image" src="https://github.com/user-attachments/assets/ad52be2b-69bd-454d-9f20-b378ca974a31" />
+
 <img width="1206" height="602" alt="image" src="https://github.com/user-attachments/assets/d42741d4-3c23-4828-808f-b9f39b944911" />
-<img width="1221" height="532" alt="image" src="https://github.com/user-attachments/assets/63fd217a-f28b-4c3d-be8a-24f41f6d1332" />
-<img width="1234" height="525" alt="image" src="https://github.com/user-attachments/assets/ec53bafd-429c-4485-a851-ad4427244786" />
-<img width="1226" height="505" alt="image" src="https://github.com/user-attachments/assets/aa1b74ad-ffe4-4c3e-942d-e7b37281ad92" />
-<img width="1268" height="528" alt="image" src="https://github.com/user-attachments/assets/b2a4f74d-1555-4a01-b441-413f8cd8ff4c" />
-<img width="640" height="397" alt="image" src="https://github.com/user-attachments/assets/a89cc9b5-7395-4406-86a1-2220e6808b37" />
 
-Admin
+---
 
-
-<img width="1265" height="590" alt="image" src="https://github.com/user-attachments/assets/a3e45d54-5f44-470f-be33-fb3f5b1473b1" />
-<img width="742" height="587" alt="image" src="https://github.com/user-attachments/assets/96f0200e-8e41-4ce7-876b-899e29a550e6" />
-
-Orders Details
-
+## Order Details
 
 <img width="985" height="606" alt="image" src="https://github.com/user-attachments/assets/ed2b3115-a256-42c1-9428-a7acc499acca" />
-<img width="963" height="603" alt="image" src="https://github.com/user-attachments/assets/197226cd-91fc-479d-8d2c-7268fc4a9993" />
 
+---
 
-Admin
-
-<img width="431" height="472" alt="image" src="https://github.com/user-attachments/assets/794290a4-54d9-4cd2-92d6-95d31a0cbe31" />
-
-
-Notifications
-
+## Notifications
 
 <img width="1237" height="411" alt="image" src="https://github.com/user-attachments/assets/2ec31d27-5a15-47eb-bd83-121f07985809" />
 
@@ -235,13 +271,13 @@ Notifications
 
 # 📈 Future Improvements
 
-- Wishlist
-- Product Reviews
-- User Profile
-- Dark Mode
-- Multi-language Support
-- Payment Gateway Integration
-- Performance Optimization
+* Wishlist
+* Product Reviews
+* User Profile
+* Dark Mode
+* Multi-language Support
+* Payment Gateway Integration
+* Performance Optimization
 
 ---
 
