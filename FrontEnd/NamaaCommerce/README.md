@@ -200,8 +200,7 @@ Admin
 Orders
 
 
-<img width="1282" height="589" alt="image" src="https://github.com/user-attachments/assets/eaf87ecb-70e2-4c56-9f04-19360939a622" />
-<img width="1303" height="528" alt="image" src="https://github.com/user-attachments/assets/6776ffb5-5660-43a6-808a-572a74659d5d" />
+<img width="1155" height="426" alt="image" src="https://github.com/user-attachments/assets/ad52be2b-69bd-454d-9f20-b378ca974a31" />
 <img width="1206" height="602" alt="image" src="https://github.com/user-attachments/assets/d42741d4-3c23-4828-808f-b9f39b944911" />
 <img width="1221" height="532" alt="image" src="https://github.com/user-attachments/assets/63fd217a-f28b-4c3d-be8a-24f41f6d1332" />
 <img width="1234" height="525" alt="image" src="https://github.com/user-attachments/assets/ec53bafd-429c-4485-a851-ad4427244786" />
