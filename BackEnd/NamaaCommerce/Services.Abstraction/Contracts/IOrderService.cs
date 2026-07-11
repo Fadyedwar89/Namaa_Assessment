@@ -17,5 +17,7 @@ namespace Services.Abstraction.Contracts
         public Task ChangeOrderStatusAsync(int orderId, OrderStatusDto newStatus);
         public Task AutoShipProcessingOrdersAsync();
         Task CancelOrderAsync(int orderId);
+
+        Task<OrderStatisticsDto> GetStatisticsAsync();
     }
 }

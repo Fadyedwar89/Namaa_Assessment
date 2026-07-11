@@ -1,5 +1,42 @@
 import "./ProductCard.css";
+ const increaseQuantity = (productId) => {
+    const item = cart.find((x) => x.productId === productId);
 
+    if (!item) {
+      const product = products.find((p) => p.id === productId);
+
+      if (!product) return;
+
+      addToCart(product);
+      return;
+    }
+
+    setCart(
+      cart.map((item) =>
+        item.productId === productId
+          ? {
+              ...item,
+              quantity: item.quantity + 1,
+            }
+          : item,
+      ),
+    );
+  };
+  const decreaseQuantity = (productId) => {
+    setCart(
+      cart.flatMap((item) => {
+        if (item.productId !== productId) return item;
+
+        if (item.quantity === 1) return [];
+
+        return {
+          ...item,
+
+          quantity: item.quantity - 1,
+        };
+      }),
+    );
+  };
 export default function ProductCard({
   product,
   isAdmin,
@@ -43,7 +80,7 @@ export default function ProductCard({
 
             <button
               className="btn btn-danger"
-              onClick={() => onDelete(product.id)}
+              onClick={() => onDelete(product)}
             >
               <i className="fa-solid fa-trash"></i>
             </button>

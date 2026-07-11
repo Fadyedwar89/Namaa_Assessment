@@ -1,0 +1,39 @@
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+.d-flex.justify-content-center.mt-5 {
+  margin-top: 40px !important;
+  padding: 20px;
+}
+
+.d-flex.justify-content-center.mt-5 .btn-outline-primary {
+  border-radius: 14px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border-width: 2px;
+  border-color: #e5e7eb;
+  color: #4b5563;
+}
+
+.d-flex.justify-content-center.mt-5 .btn-outline-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-color: transparent;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+.d-flex.justify-content-center.mt-5 .btn-outline-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.d-flex.justify-content-center.mt-5 .align-self-center {
+  font-weight: 700;
+  color: #374151;
+  padding: 0 24px;
+  font-size: 0.95rem;
+}

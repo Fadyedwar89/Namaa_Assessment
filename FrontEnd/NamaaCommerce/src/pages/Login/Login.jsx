@@ -6,48 +6,35 @@ import "./Login.css";
 
 function Login() {
   const navigate = useNavigate();
-
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   });
-
   const [error, setError] = useState("");
-
   const handleChange = (e) => {
     setLoginData({
       ...loginData,
       [e.target.name]: e.target.value,
     });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const data = await authService.login(loginData);
-
+      const data = await authService.login(loginData)
       console.log(data);
-
       localStorage.setItem("token", data.token);
       localStorage.setItem("email", data.email);
       localStorage.setItem("displayName", data.displayName);
-
       const decoded = jwtDecode(data.token);
-
       const role =
         decoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
-
       localStorage.setItem("role", role);
-
       navigate("/Products");
     } catch (err) {
       console.log(err);
-
       setError("Invalid Email Or Password");
     }
   };
-
   return (
     <section className="login-page">
       <div className="container">

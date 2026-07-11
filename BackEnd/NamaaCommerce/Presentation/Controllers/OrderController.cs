@@ -38,5 +38,12 @@ namespace Presentation.Controllers
 
             return NoContent();
         }
+
+        [HttpGet("statistics")]
+        public async Task<ActionResult<OrderStatisticsDto>> GetStatistics()
+        {
+            var result = await _orderService.GetStatisticsAsync();
+            return Ok(result);
+        }
     }
 }

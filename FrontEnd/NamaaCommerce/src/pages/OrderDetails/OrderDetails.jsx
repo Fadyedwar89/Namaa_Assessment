@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import orderService from "../../services/orderService";
-import OrderTimeline from "../../components/OrderTimeline/OrderTimeline";
-import StatusModal from "../../components/StatusModal/StatusModal";
-import CancelOrderModal from "../../components/CancelOrderModal/CancelOrderModal";
+import OrderTimeline from "../../components/Orders/OrderTimeline/OrderTimeline";
+import StatusModal from "../../components/Orders/StatusModal/StatusModal";
+import CancelOrderModal from "../../components/Orders/CancelOrderModal/CancelOrderModal";
 import "./OrderDetails.css";
 
 export default function OrderDetails() {

@@ -33,7 +33,12 @@ const createOrder = async (items) => {
 
   return data;
 };
+ const getStatistics = async () => {
+const response = await axiosInstance.get("/Order/statistics");
+  return response.data;
+};
 export default {
+  getStatistics,
   getOrders,
   getOrderById,
   updateStatus,

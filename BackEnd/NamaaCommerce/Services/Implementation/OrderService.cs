@@ -185,6 +185,20 @@ namespace Services.Implementation
             await _notificationsService.SendOrderStatusChangedAsync(notificationMap);
 
         }
+       public async Task<OrderStatisticsDto> GetStatisticsAsync()
+        {
+
+            var orders = await _orderRepository.GetAllAsync();
+
+            return new OrderStatisticsDto
+            {
+                TotalOrders = orders.Count(),
+                Pending = orders.Count(o => o.Status == OrderStatus.Pending),
+                Processing = orders.Count(o => o.Status == OrderStatus.Processing),
+                Shipped = orders.Count(o => o.Status == OrderStatus.Shipped),
+                Cancelled = orders.Count(o => o.Status == OrderStatus.Cancelled)
+            };
+        }
 
         #region HelperMethods
 
